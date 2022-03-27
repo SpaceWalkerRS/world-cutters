@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "world_cutters",
+	"version": "${version}",
+	
+	"name": "World Cutters",
+	"description": "What if stone cutters could actually cut stone?",
+	"authors": [
+		"Space Walker"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/world-cutters",
+		"sources": "https://github.com/SpaceWalkerRS/world-cutters",
+		"issues": "https://github.com/SpaceWalkerRS/world-cutters/issues"
+	},
+	
+	"license": "MIT Licence",
+	"icon": "assets/world/cutters/icon.png",
+	"environment": "*",
+	"entrypoints": {
+	},
+	"mixins": [
+		"world-cutters.mixins.json"
+	],
+	
+	"depends": {
+		"minecraft": "1.18.x"
+	},
+
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/EJC9zkX"
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "world.cutters.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"PistonStructureResolverMixin"
+	],
+	"client": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
