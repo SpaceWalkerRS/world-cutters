@@ -14,9 +14,9 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AbstractGlassBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.StainedGlassPaneBlock;
+import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.piston.PistonStructureResolver;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -45,7 +45,6 @@ public class PistonStructureResolverMixin {
 		locals = LocalCapture.CAPTURE_FAILHARD,
 		at = @At(
 			value = "INVOKE",
-			shift = Shift.BEFORE,
 			ordinal = 0,
 			target = "Ljava/util/List;size()I"
 		)
@@ -111,7 +110,7 @@ public class PistonStructureResolverMixin {
 
 	private boolean canBeBroken(BlockState state) {
 		return !state.is(Blocks.STONECUTTER)
-			&& !(state.getBlock() instanceof AbstractGlassBlock)
+			&& !(state.getBlock() instanceof TransparentBlock)
 			&& !state.is(Blocks.GLASS_PANE)
 			&& !(state.getBlock() instanceof StainedGlassPaneBlock)
 			&& !isSticky(state);
